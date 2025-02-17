@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# MediConnect
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MediConnect is a web application that helps users find affordable generic medicine alternatives by scanning medicine labels. It also provides the nearest **Jan Aushadhi Kendra** locations on a map and offers search and direction functionalities using free map APIs.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
+- 📷 **Medicine Scanner** – Scan a medicine label and get cheaper generic alternatives.
+- 🗺️ **Find Nearby Kendras** – Shows all hardcoded Jan Aushadhi Kendras in and around **Chennai**.
+- 🔍 **Search Functionality** – Users can search for a specific Kendra.
+- 📌 **Custom Kendra Icons** – Each Jan Aushadhi Kendra is marked with a **custom pharmacy icon**.
+- 🚗 **Directions to Kendras** – Shows routes from the user's location to the selected Kendra.
+- 🌍 **Uses Free Map API** – Avoids Google Maps API; utilizes free OpenStreetMap and Leaflet.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
+- **Frontend:** React.js
+- **Mapping Library:** Leaflet.js, React-Leaflet, Leaflet-Routing-Machine
+- **Geolocation:** Browser API (Navigator.geolocation)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📥 Installation & Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1️⃣ **Clone the Repository**
+```sh
+ git clone https://github.com/your-username/MediConnect.git
+ cd MediConnect
+```
 
-### `npm run build`
+### 2️⃣ **Install Dependencies**
+```sh
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3️⃣ **Run the Application**
+```sh
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The app will be available at **http://localhost:3000**.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📌 How to Add Custom Kendra Icons
+1. Place your **custom pharmacy marker icon** inside the `public/icons/` folder.
+2. Update the icon path in `MapComponent.js`:
+   ```javascript
+   const kendraIcon = new L.Icon({
+       iconUrl: process.env.PUBLIC_URL + "/icons/kendra-icon.png",
+       iconSize: [32, 32],
+       iconAnchor: [16, 32],
+       popupAnchor: [0, -30],
+   });
+   ```
+3. Restart the app (`npm start`) to apply changes.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📍 Hardcoded Jan Aushadhi Kendras (Chennai)
+| Kendra Name | Latitude | Longitude |
+|-------------|----------|-----------|
+| T Nagar | 13.0416 | 80.2333 |
+| Velachery | 12.9784 | 80.2184 |
+| Anna Nagar | 13.0863 | 80.2134 |
+| Adyar | 13.0067 | 80.2576 |
+| Tambaram | 12.9229 | 80.1275 |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 💡 Future Enhancements
+✅ **Dynamic Kendra Availability** (Green: Open, Red: Closed)  
+✅ **User Input for Custom Kendras**  
+✅ **Backend Integration for Live Medicine Prices**
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📜 License
+This project is open-source and available under the MIT License.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Contributing
+If you'd like to contribute:
+1. Fork the repository.
+2. Create a new branch (`feature-xyz`).
+3. Commit your changes and push them.
+4. Open a **Pull Request**.
